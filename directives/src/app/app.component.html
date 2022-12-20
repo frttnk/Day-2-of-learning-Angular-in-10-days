@@ -1,0 +1,24 @@
+<!-- <div style="background-color: blue;"> -->
+<!-- <div [ngStyle]="{'background-color':'blue'}"> -->
+<!-- <div [ngStyle]="{'background-color':background_color}"> -->
+  <div [ngClass]="className">
+  <span *ngIf="users.length > 0">
+    We have some users <br>
+    <div [ngSwitch]="users.length">
+      <span>Number Of Users</span> &nbsp;
+      <span *ngSwitchCase=0>0</span>
+      <span *ngSwitchCase=1>1</span>
+      <span *ngSwitchCase=2>2</span>
+      <span *ngSwitchCase=3>3</span>
+      <span *ngSwitchDefault>More users</span>
+    </div>
+    <ul>
+      <li *ngFor="let user of users">
+        {{user}}
+      </li>
+    </ul>
+  </span>
+  <span *ngIf="users.length == 0">
+    We have some users
+  </span>
+</div>
